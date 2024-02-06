@@ -1,0 +1,9 @@
+# defome input string as returning "replace" with every " " as a "..."
+ask = input("how do you feel today?")
+poop = ask.replace(":)", "🙂"), ask.replace(":(", "🙁"), ask.replace(":|", "😐")
+
+
+# reading conversion
+result = poop
+# printing converted version
+print(result)
