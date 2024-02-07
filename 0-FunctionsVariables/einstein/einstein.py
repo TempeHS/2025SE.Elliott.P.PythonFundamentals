@@ -1,9 +1,9 @@
 def main():
     x = int(input("Enter the mass"))
-    c = int(input("Enter the amount of joules"))
+    c = 299792458
     e = (x * c) ** 2
     print("E=")
-    print(e)
+    print(f"{e} joules")
 
 
 main()
