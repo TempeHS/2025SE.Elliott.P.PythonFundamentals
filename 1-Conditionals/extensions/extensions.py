@@ -4,17 +4,19 @@ def extract_user_input():
 
     # strip spaces
     words = user_input.split()
-    # keep last 4 letter in string if it is .jog or .gif
+    # keep last 4 letter in string if it is .jpg or .gif
     for word in words:
-        if (
-            word.endswith(".jpg")
-            or word.endswith(".gif")
-            or word.endswith(".png")
-            or word.endswith(".pdf")
-            or word.endswith(".txt")
-            or word.endswith(".zip")
-        ):
-            formats.append(word[-4:])
+        if word.endswith(".jpg") or word.endswith(".jpeg"):
+            print("image/jpg")
+        elif word.endswith(".png"):
+            print("image/png")
+        elif word.endswith(".pdf"):
+            print("applications/pdf")
+        elif word.endswith(".txt"):
+            print("applications/txt")
+        elif word.endswith(".zip"):
+            print("applications/zip")
+
         else:
             print("application/octet-stream")
 
