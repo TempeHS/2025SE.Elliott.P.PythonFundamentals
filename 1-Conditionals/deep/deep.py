@@ -1,4 +1,10 @@
 poopFingleBottom = input("what is the answer to the universe")
 poopFingleBottom = poopFingleBottom.strip(" ").lower()
-if "42" or "forty two" or "forty-two" or "fortytwo" in poopFingleBottom:
+if (
+    poopFingleBottom.__contains__("42")
+    or poopFingleBottom.__contains__("fortytwo")
+    or poopFingleBottom.__contains__("forty-two")
+):
     print("Yes.")
+else:
+    print("end your life")
