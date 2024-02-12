@@ -7,7 +7,17 @@ z = round(z, 1)
 
 
 def changer():
-
+    # match y:
+    # case "+":
+    # print(x + z)
+    # case "-":
+    # print(x - y)
+    # case "*":
+    # print(x * z)
+    # case "/" | "%":
+    # print(x / z)
+    # case _:
+    # print("syntax error")
     if y == "+":
         print(x + z)
     elif y == "-":
@@ -16,6 +26,8 @@ def changer():
         print(x / z)
     elif y == "*" or y == "x":
         print(x * z)
+    else:
+        print("SYNTAx eRROR!")
 
 
 changer()
