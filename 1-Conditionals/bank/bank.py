@@ -1,7 +1,9 @@
 variable = input("say hello")
 variable = variable.strip(",").lower()
 
-if ("hello") in variable:
+if variable.startswith("h") and variable.__contains__("hello"):
     print("0$")
-elif "h" in variable:
+elif variable.startswith("h"):
     print("20$")
+else:
+    print("$100")
