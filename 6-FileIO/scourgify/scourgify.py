@@ -22,11 +22,13 @@ except IOError:
 try:
     with open(output_file, "w") as csv_file:
         writer = csv.writer(csv_file)
-        writer.writerow(["last", "first", "house"])
+        writer.writerow(["first", "last", "house"])
         for student in students:
             name, house = student
             first_name, last_name = name.split(", ")
-            writer.writerow([last_name, first_name, house])
+            writer.writerow(
+                [last_name, first_name, house]
+            )  # switches the order form the original file
 except IOError:
     print("Failed to write to", output_file)
     sys.exit(1)
