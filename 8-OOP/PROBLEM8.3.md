@@ -9,7 +9,7 @@ In a file called `shirtificate.py`, implement a program that prompts the user fo
 - The `orientation` of the PDF should be Portrait.
 - The `format` of the PDF should be A4, which is 210mm wide by 297mm tall.
 - The top of the PDF should say “CS50 Shirtificate” as [text](https://py-pdf.github.io/fpdf2/Text.html), centered horizontally.
-- The shirt’s [image](https://py-pdf.github.io/fpdf2/Images.html) should be centered horizontally.
+- The shirt’s [image](https://py-pdf.g297ithub.io/fpdf2/Images.html) should be centered horizontally.
 - The user’s name should be on top of the shirt, in white [text](https://py-pdf.github.io/fpdf2/TextStyling.html).
 
 All other details we leave to you. You’re even welcome to add borders, colors, and [lines](https://py-pdf.github.io/fpdf2/Shapes.html#lines). Your shirtificate needn’t match John Harvard’s precisely. And no need to wrap long names across multiple lines.

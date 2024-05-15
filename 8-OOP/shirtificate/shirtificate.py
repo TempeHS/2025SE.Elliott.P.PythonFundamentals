@@ -19,20 +19,26 @@ class PDF(FPDF):
         # Performing a line break:
         self.ln(10)
 
-    def footer(self):
+    def footer(
+        self,
+    ):
+        # pdf.set_margins(0)
         # Ensure the image path is correct and the method is called correctly
-        self.image(
-            "8-OOP/images/shirtificate.png", x=50, y=50
-        )  # Adjusted y position to not overlap with content
+        pX = (210 * 0.75) / 2
+        pY = (297 * 0.75) / 2
+        iX = 50
+        iY = 50
+        X = pX - iX
+        Y = pY - iY
+        self.image("8-OOP/images/shirtificate.png", Align="C", y=50)
+        # Adjusted y position to not overlap with content
         self.set_y(-15)  # Position at 15 mm from bottom
         self.set_font("helvetica", "I", 8)
-        self.cell(0, 10, "Page %s" % self.page_no(), 0, 0, "C")
 
 
 student = input("What's your name? ")
 pdf = PDF()
 pdf.set_title("CS50 Shirtificate")
 pdf.set_author(student)
-
 pdf.add_page()
 pdf.output("tuto3.pdf")

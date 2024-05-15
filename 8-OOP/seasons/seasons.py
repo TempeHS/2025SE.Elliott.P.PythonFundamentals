@@ -12,32 +12,30 @@ def main():
     except ValueError:  # if doesnt fit then exit
         print("Invalid date format. Please use YYYY-MM-DD format.")
         sys.exit(1)
-
-    today_date = date.today()
+    today_date = datetime.today()
     if birth_date > today_date:  # catch "incorect" date errors
         print("Birth date cannot be in the future.")
         sys.exit(1)
 
-    total_minutes = calculate_minutes(
-        birth_date, today_date
-    )  # calls calculate minutes, start=birth, end= today
-    print_minutes_in_words(total_minutes)
+    class Minutes:
 
+        def calculate_minutes(start, end):
+            delta = start - end
+            total_minutes = (
+                delta.day * 24 * 60
+            )  # days * hours * minutes = total minutes form days
+            return total_minutes
 
-def calculate_minutes(
-    start_date, end_date
-):  # minute calculator for the time since birth, import start and end
-    delta = end_date - start_date  # total days since birth
-    total_minutes = (
-        delta.days * 24 * 60
-    )  # days * hours * minutes = total minutes form days
-    return total_minutes
+        def print_minutes_in_words(minutes):
+            p = inflect.engine()
+            words = p.number_to_words(minutes)
+            print(
+                f"You are {words} minutes old."
+            )  # inflect will handle all the grammar,
 
-
-def print_minutes_in_words(minutes):
-    p = inflect.engine()
-    words = p.number_to_words(minutes)
-    print(f"You are {words} minutes old.")  # inflect will handle all the grammar,
+    total_minutes = Minutes.calculate_minutes(today_date, birth_date)
+    # calls calculate minutes, start=birth, end= today
+    Minutes.print_minutes_in_words(total_minutes)
 
 
 if __name__ == "__main__":
